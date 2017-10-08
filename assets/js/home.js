@@ -34,12 +34,12 @@ $(document).ready(function() {
 });
 
 function up(){
-        var $this = $(document.getElementById("page-wrapper"));
-        console.log("1");
-        $this.css("top", "0%");
-        console.log(3);
+    var $this = $(document.getElementById("page-wrapper"));
+    console.log("1");
+    $this.css("top", "0%");
+    console.log(3);
 
-        var $card = $(document.getElementById("card"));
-        $card.css("display", "inherit");
-    }
+    var $card = $(document.getElementById("card"));
+    $card.css("display", "inherit");
+}
 
