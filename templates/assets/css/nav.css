@@ -1,0 +1,120 @@
+body {
+	margin: 0;
+    background-color: #f2f2f2;
+}
+
+a {
+    color: inherit;
+	text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Bar */
+#top-bar {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(96, 128, 232, .9); 
+    /*background-color: #34495e;*/
+    color: #fff;
+    z-index: 10;
+    border-bottom: #0d0d0d solid 0.05em;
+    box-shadow: 2px 2px 4px #4D4D4D;
+}
+
+/*Logo*/
+#organization-logo {
+    padding: 0.625em;
+    margin-left: 3.125em;
+    height: 1.85em;
+    float: left;
+}
+
+#organization-logo img {
+    height: 100%;
+}
+
+/*Nav and Items*/
+nav {
+	display: block;
+    float: right;
+    /*height: 3.25em;*/
+    margin-right: 0.625em;
+    font-size: 1.15em;
+    /*font-family: "Lato", sans-serif;*/
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav ul li:hover > ul {
+    height: auto;
+    opacity: 1;
+    /*transform: translateY(0em);*/
+    transform: translateY(2.64em);
+}
+
+nav ul ul #hide {
+    opacity: 0;
+    /*transform: translateY(2.65em);*/
+}
+
+
+nav ul ul {
+    position: absolute;
+    /*transform: translateY(-200%);*/
+    opacity: 0;
+    overflow: hidden;
+    z-index: 5;
+    background-color: #4f6f8f;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -webkit-transition: opacity 125ms ease-in;
+    -moz-transition: opacity 125ms ease-in;
+    -o-transition: opacity 125ms ease-in;
+    transition: opacity 125ms ease-in;
+}
+
+nav ul ul li {
+    display: block;
+    position: relative;
+    top: 100%;
+    width: 100%;
+}
+
+
+nav ul ul li a {
+    display: block;
+    width: 100%;
+}
+
+.nav-title, .nav-subtitle {
+    float: left;
+    padding: .75em 1em;
+    transition: linear 0.2s;
+    -webkit-transition: linear 0.2s;
+    -moz-transition: linear 0.2s;
+
+    /*font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;*/
+}
+
+.nav-subtitle {
+    width: 100%;
+}
+
+.nav-title:hover, .nav-subtitle:hover, #organization-logo:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
