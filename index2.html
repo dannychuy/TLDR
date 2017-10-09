@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>TLDResume</title>
-    <link rel="icon" href="./assets/img/favicon.ico">
+<title>TLDResume</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='./assets/css/nav.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='./assets/css/home.css') }}">
 
-    <!-- Stylesheets -->
-    <link href="./assets/css/nav.css" rel="stylesheet">
-    <link href="./assets/css/home.css" rel="stylesheet">
+<script src="{{url_for('static', filename='./assets/js/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='./assets/js/home.js')}}"></script>
+<script src="{{url_for('static', filename='./assets/js/form_submission.js')}}"></script>
 
-    <!-- Javascript -->
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/home.js"></script>
-    <script src="./assets/js/form_submission.js"></script>
+<link rel=stylesheet type=text/css href='https://fonts.googleapis.com/css?family=Indie+Flower' >
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+<div class=page>
+  <h1>Flaskr</h1>
+  <div class=metanav>
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}">log in</a>
+  {% else %}
+    <a href="{{ url_for('logout') }}">log out</a>
+  {% endif %}
+  </div>
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>
+
 
 </head>
 <body>

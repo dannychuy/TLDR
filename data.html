@@ -1,0 +1,61 @@
+{% extends "index.html" %}
+{% block body %}
+
+<div id="page">
+    <br>
+    <br>
+        <div id="card">
+            <div id="title">{{name}}</div>
+            <br>
+            <div>
+                <div id="grid">
+                <div class="row">
+                    <a href="#">
+                        <div class="contact">
+                            <div class="profile"><img src="./assets/img/fb-icon.png"></div>
+                            <div class="name">Sentiment</div>
+                            <div class="link"></div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="contact">
+                            <div class="profile"><img src="./assets/img/twitter-icon.png"></div>
+                            <div class="name">Categories and Focuses</div>
+                            <div class="link"></div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="contact">
+                            <div class="profile"><img src="./assets/img/email-icon.png"></div>
+                            <div class="name">Charts</div>
+                            <div class="link"></div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="contact">
+                            <div class="profile"><img src="./assets/img/email-icon.png"></div>
+                            <div class="name">Charts</div>
+                            <div class="link"></div>
+                        </div>
+                    </a>
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+  <ul class=entries>
+  {% for entry in entries %}
+    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
+
+    
+    </div>

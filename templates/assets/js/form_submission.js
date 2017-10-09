@@ -1,39 +1,27 @@
+$(document).ready(function() {
+// var input = document.querySelector('input');
+
+// input.addEventListener('change', updateText);
+
+// function updateText() {
+//     var curr = input.files;
+//     console.log(input.name);
+// }
+
+// });
+
 var input = document.querySelector('input');
-var preview = document.querySelector('.preview');
+var drag = document.getElementById("drag");
 
-input.style.opacity = 0;
-input.addEventListener('change', updateText);
+input.addEventListener('change', updateDescription);
+function updateDescription() {
 
-function updateText() {
-    var curFiles = input.files;
-    if (curFiles.length > 0 && validFileType(curFiles[0])) {
-        console.log(2);
+  var curFiles = input.files;
+  if(curFiles.length === 0) {
 
-    } else {
-        console.log(22);
-    }
-}
-var fileTypes = [
-    'image/jpeg',
-    'image/pjpeg',
-    'image/png'
-]
-
-function validFileType(file) {
-    for (var i = 0; i < fileTypes.length; i++) {
-        if (file.type === fileTypes[i]) {
-            return true;
-        }
-    }
-    return false;
+  } else {
+    drag.innerHTML='File name: ' + curFiles[0].name;    
+  }
 }
 
-function returnFileSize(number) {
-    if (number < 1024) {
-        return number + 'bytes';
-    } else if (number > 1024 && number < 1048576) {
-        return (number / 1024).toFixed(1) + 'KB';
-    } else if (number > 1048576) {
-        return (number / 1048576).toFixed(1) + 'MB';
-    }
-}
+});
